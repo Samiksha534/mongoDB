@@ -20,10 +20,10 @@ app.use(express.static('public'));
 
 // Routes
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'insta.html'));
+  res.sendFile(path.join(__dirname, 'views', 'login.html'));
 });
 
-app.post('/insta', async (req, res) => {
+app.post('/login', async (req, res) => {
   const { username,password } = req.body;
   const user = await User.findOne({ username,password });
 
